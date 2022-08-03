@@ -1,0 +1,91 @@
+/**************IA Gatos y Perros****************/
+.appDetecion{   
+   width: 75%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content:center;
+
+   padding: 1rem 5rem;
+
+   background-color: #3e97e481;  
+   border-radius: 1rem;
+   box-shadow: 1rem 1rem .5rem rgba(0,0,0, .5); 
+   
+   margin-bottom: 3rem;
+}
+
+#tituloApp{
+   margin: 0;
+
+   color:#FFD717;   
+
+   font-weight: 500;
+   font-size: 3rem;
+   text-align: center;    
+}
+
+/*Camara escondida*/
+#video{
+   width: 1px;
+   margin: 0;
+   padding: 0;
+}
+
+/*Boton cambio de camara*/
+#cambiar-camara{
+   margin: 2rem;
+   
+   padding: 1.5rem 3rem;
+   border: none;
+   border-radius: 1rem;   
+
+   background-color:#4a96b9b9;
+   color: #FFF89A;
+   box-shadow: .6rem .6rem .5rem rgba(0,0,0, .45);  
+
+   font-weight: 500;
+   font-size: 2.5rem;
+   transition: .2s; 
+   display: block;  
+}
+
+@media (min-width:980px){
+   #cambiar-camara{
+      display: block;
+   }
+}
+
+#cambiar-camara:hover{
+   color:#FFD717;
+   transform: scale(1.09);
+}
+
+/*Camara principal*/
+#canvas{
+   max-width: 100%;
+   width: 35rem;
+   height: 35rem;
+   margin: 1rem;
+
+   box-shadow: 1rem 1rem .5rem rgba(0,0,0, .5);  
+   border-radius: .25rem;
+}
+
+/*Camara transformada*/
+#otrocanvas{
+   display: none;
+}
+
+/*Resultados*/
+#resultado{
+   margin: 0;
+
+   color:#e7cdec;
+
+   text-transform: uppercase;
+
+   font-weight: 500;
+   font-size: 4.5rem;
+   text-align: center;    
+}

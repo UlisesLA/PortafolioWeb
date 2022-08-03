@@ -1,0 +1,397 @@
+/****Variables Globales****/
+
+/*:root{    
+
+}*/
+
+/**Ajustes Generales de la pagina*/
+html {
+   font-size: 62.5%;
+   box-sizing: border-box; /*Hack box model*/
+   scroll-snap-type: y mandatory;
+
+   /*Tipografia*/
+   font-family: "Rubik", sans-serif;
+
+   /*Scroll horizontal*/
+   overflow-x: hidden;
+}
+*,
+*:before,
+*:after {
+   box-sizing: inherit;
+   margin: 0;
+}
+
+body {
+   font-size: 16px;
+   background-color: #022c43;
+   line-height: 1.5;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   width: 100%;
+}
+/***Particulas***/
+#particles-js {
+   height: 100vh;
+   width: 100%;
+   position: fixed;
+   z-index: -1;
+}
+
+/*******Piezas*******/
+
+#barNav {
+   width: 100%;
+}
+
+#redesSociales {
+   width: 100%;
+}
+
+/*******************Clases Extras**************************/
+
+/***Barra de Navegacion***/
+.navBar {
+   width: 100%;
+   display: flex;
+   position: fixed;
+   justify-content: space-evenly;
+
+   margin: 0rem;
+   background-color: #022c43;
+   z-index: 2;
+}
+
+.navBar a {
+   color: #fff89a;
+
+   text-decoration: none;
+   list-style: none;
+   text-align: center;
+
+   padding: 2.5rem 5rem;
+   font-size: 2rem;
+   font-weight: 500;
+   border-radius: 0rem 0rem 0.5rem 0.5rem;
+}
+
+.navBar a:hover {
+   background-color: #115173;
+   color: #ffd700;
+}
+
+/***Cabecera***/
+.caraPrecentacion {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   margin-top: 11rem;
+}
+
+.caraPrecentacion img {
+   width: 45%;
+   border-radius: 50%;
+}
+
+.caraPrecentacion h1 {
+   color: #ffd700;
+   font-weight: 700;
+   font-size: 6rem;
+   margin: 0;
+   padding: 0.5rem 0rem;
+}
+
+.caraPrecentacion p {
+   color: #ffd700;
+   font-weight: 300;
+   font-size: 2.2rem;
+   margin: 0rem 0rem 5rem;
+   padding: 0rem 0rem;
+}
+
+/***Sobre Mi***/
+.sobreMi {
+   width: 90%;
+
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+
+   background-color: #19456b;
+   box-shadow: 0.4rem 0.4rem #1a5f7a;
+   opacity: 0.85;
+
+   border-radius: 0.75rem;
+}
+
+.sobreMi h2 {
+   width: 22.5%;
+
+   color: #ffd717;
+
+   font-size: 4.5rem;
+   font-weight: 700;
+   text-align: left;
+
+   margin: 1.5rem 0rem;
+   padding: 0rem 5rem;
+
+   border-bottom: 1px solid #fff89a;
+}
+
+.infoBasica {
+   width: 100%;
+
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+}
+
+.IB-descripcion {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+
+   height: 40rem;
+}
+
+.IB-descripcion h3 {
+   color: #a9f1df;
+   margin: 2.5rem 3rem;
+
+   font-size: 3rem;
+   font-weight: 500;
+}
+
+.IB-descripcion p {
+   color: #e7d9ea;
+   padding: 0rem 3rem;
+   text-align: justify;
+
+   font-size: 1.8rem;
+   font-weight: 300;
+}
+
+.botonCV {
+   width: 97%;
+
+   display: flex;
+   justify-content: center;
+
+   margin: 3rem;
+}
+
+/*Boton Css*/
+.botonCV a {
+   position: relative;
+   display: block;
+   padding: 1.5rem 3rem;
+   color: #3bb4c1;
+   text-transform: uppercase;
+   letter-spacing: 0.4rem;
+   text-decoration: none;
+   font-size: 2.4rem;
+   overflow: hidden;
+   transition: 0.2s;
+   margin: 1rem;
+   border-radius: 1rem;
+}
+
+.botonCV a:hover {
+   color: #255784;
+   background: #3bb4c1;
+   box-shadow: 0 0 1rem #3bb4c1, 0 0 4rem #3bb4c1, 0 0 8rem #3bb4c1;
+   transition-delay: 0.65s;
+}
+
+.botonCV a span {
+   position: absolute;
+   display: block;
+}
+
+.botonCV a span:nth-child(1) {
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 0.2rem;
+   background: linear-gradient(90deg, transparent, #3bb4c1);
+}
+
+.botonCV a:hover span:nth-child(1) {
+   left: 100%;
+   transition: 0.5s;
+}
+
+.botonCV a span:nth-child(2) {
+   top: -100%;
+   right: 0;
+   width: 0.2rem;
+   height: 100%;
+   background: linear-gradient(180deg, transparent, #3bb4c1);
+}
+
+.botonCV a:hover span:nth-child(2) {
+   top: 100%;
+   transition: 0.5s;
+   transition-delay: 0.25s;
+}
+
+.botonCV a span:nth-child(3) {
+   bottom: 0;
+   right: -100%;
+   width: 100%;
+   height: 0.2rem;
+   background: linear-gradient(270deg, transparent, #3bb4c1);
+}
+
+.botonCV a:hover span:nth-child(3) {
+   right: 100%;
+   transition: 0.5s;
+   transition-delay: 0.375s;
+}
+
+.botonCV a span:nth-child(4) {
+   bottom: -100%;
+   left: 0;
+   width: 0.2rem;
+   height: 100%;
+   background: linear-gradient(360deg, transparent, #3bb4c1);
+}
+
+.botonCV a:hover span:nth-child(4) {
+   bottom: 100%;
+   transition: 0.5s;
+   transition-delay: 0.5s;
+}
+
+/*Noticias*/
+
+.noticias {
+   width: 90%;
+   height: 40rem;
+
+   margin-top: 5rem;
+
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+
+   background-color: #19456b;
+   box-shadow: 0.4rem 0.4rem #1a5f7a;
+   opacity: 0.85;
+
+   border-radius: 0.75rem;
+}
+
+.noticias h2 {
+   width: 22.5%;
+
+   color: #ffd717;
+
+   font-size: 4.5rem;
+   font-weight: 700;
+   text-align: left;
+
+   margin: 1.5rem 0rem;
+   padding: 0rem 5rem;
+
+   border-bottom: 1px solid #fff89a;
+}
+
+/*Redes Sociales o Formas de contacto*/
+.contacto {
+   width: 100%;
+
+   margin: 5rem 0rem 2rem;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   cursor: pointer;
+}
+
+.icon {
+   position: relative;
+
+   width: 8rem;
+   height: 8rem;
+
+   margin: 0rem 2rem;
+   border-radius: 50%;
+   transition: all 0.8s;
+}
+
+.icon:hover {
+   background-color: #e60073;
+   box-shadow: 0 0 2rem #e60073;
+}
+
+.icon:hover:nth-child(2) {
+   background-color: #ff0000;
+   box-shadow: 0 0 2rem #ff0000;
+}
+
+.icon:hover:nth-child(3) {
+   background-color: #6908d8;
+   box-shadow: 0 0 2rem #6908d8;
+}
+
+.icon:hover:nth-child(4) {
+   background-color: #24292d;
+   box-shadow: 0 0 2rem #24292d;
+}
+
+.icon:hover:nth-child(5) {
+   background-color: #08c1f0;
+   box-shadow: 0 0 2rem #08c1f0;
+}
+
+.icon i {
+   color: #fff;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 4rem;
+}
+
+.icon svg circle {
+   stroke-dasharray: 74;
+   transition: all 0.5s ease;
+}
+
+.icon:hover circle {
+   stroke-dasharray: 220;
+}
+/***Pie de pagina***/
+footer {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+
+   color: #fff89a;
+
+   font-size: 1.8rem;
+   font-weight: 400;
+   margin: 3rem 0rem 1rem;
+}
+
+/*Usher456-L4b*/
+
+/***********************************************************************/
+/*Titulos de las paginas*/
+
+.tituloPagina {
+   margin-top: 11rem;
+
+   color: #ffd700;
+   font-weight: 700;
+   font-size: 5.5rem;
+
+   padding: 0.5rem 0rem;
+}
