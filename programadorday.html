@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My cherie</title>
+  </head>
+  <style>
+    body {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;
+      background-color: #f279a6;
+      color: #f2f2f2;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      font-weight: 100;
+      font-size: 20px;
+    }
+    h2 {
+      text-align: center;
+      font-weight: 300;
+      font-size: 18px;
+    }
+    span,
+    h4 {
+      font-weight: 900;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #590222;
+    }
+
+    canvas {
+      border: none;
+      margin: 0;
+    }
+
+    .cocoro {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      animation: latido 1s infinite;
+      background-color: #d9043d;
+      display: inline-block;
+      height: 100px;
+      margin: 100px 10px 50px;
+      transform: rotate(-45deg);
+      width: 100px;
+      z-index: -1;
+    }
+
+    .cocoro h4 {
+      display: flex;
+      justify-content: center;
+      text-align: right;
+      width: 100%;
+      height: 50%;
+      z-index: 5;
+      transform: rotate(45deg);
+    }
+
+    .cocoro:before,
+    .cocoro:after {
+      content: "";
+      background-color: #d9043d;
+      border-radius: 50%;
+      height: 100px;
+      position: absolute;
+      width: 100px;
+      z-index: -2;
+    }
+
+    .cocoro:before {
+      top: -50px;
+      left: 0;
+      z-index: -2;
+    }
+
+    .cocoro:after {
+      left: 50px;
+      top: 0;
+      z-index: -2;
+    }
+
+    @keyframes latido {
+      0% {
+        transform: scale(1) rotate(-45deg);
+      }
+      20% {
+        transform: scale(1.25) rotate(-45deg);
+      }
+      40% {
+        transform: scale(1.5) rotate(-45deg);
+      }
+    }
+  </style>
+  <body>
+    <div id="corazon"></div>
+    <canvas id="canv"></canvas>
+    <div id="frase"></div>
+    <div class="cocoro"><h4 id="nombress"></h4></div>
+    <h2>LINDO DIA CORAZON</h2>
+
+    <script>
+      var nombre = prompt("Como te dicen?");
+      var cora = document.getElementById("corazon");
+      var cocoros = document.getElementById("coco");
+      var fraces = document.getElementById("frase");
+      var miCora = document.getElementById("nombress");
+
+      cora.innerHTML = ``;
+      cora.innerHTML = `
+            <h1>Que tengas hermoso dia <span>${nombre}</span></h1>
+            <h2> (•ө•) ♡ PIOOOO ♡ </h2>
+            <h2>Queria decirte que eres hermosa <span>${nombre}</span> </h2>
+            <h2>✾◕‿◕✾</h2>
+            <h2>My cherie <span>${nombre}</span></h2>
+            <h2>   <h2>
+            <h2>En este mundo tan pixeleado... solo tú llenas de vectores mi corazón!!</h2>
+            <h2>Asi que <span>${nombre}</span>, te programe uno 7u7 ...</h2>
+        `;
+
+      fraces.innerHTML = "";
+      fraces.innerHTML = `<h2>Pero como eres diseñadora mejor usemos CSS, que dices  <span>${nombre}</span>? UwU ...<h2>`;
+
+      miCora.innerHTML = nombre;
+
+      // inicia el canvas
+      const c = document.getElementById("canv");
+      const ctx = c.getContext("2d");
+      const cw = (c.width = 300);
+      const ch = (c.height = 300);
+      const cx = cw / 2,
+        cy = ch / 2;
+      // define el grosor de línea
+      ctx.lineWidth = 4;
+      // define el color de línea
+      ctx.strokeStyle = "crimson";
+
+      // el algoritmo del corazón
+      function corazon(r, paso) {
+        let puntos = [];
+        for (var a = 0; a < 2 * Math.PI; a += paso) {
+          let p = {};
+          p.x = cx + 16 * r * (Math.sin(a) * Math.sin(a) * Math.sin(a));
+          p.y =
+            cy -
+            13 * r * Math.cos(a) +
+            5 * r * Math.cos(2 * a) +
+            2 * r * Math.cos(3 * a) +
+            1 * r * Math.cos(4 * a);
+          puntos.push(p);
+        }
+        return puntos;
+      }
+
+      function dibujarCorazonEnCanvas() {
+        // crea un array vacío para guardar los puntos
+        let puntos = corazon(7.5, 0.05);
+        // empieza el trazado
+        ctx.beginPath();
+        // mueve el puntero al primer punto del array
+        ctx.moveTo(puntos[0].x, puntos[0].y);
+        // dibuja el corazon
+        puntos.forEach((p) => {
+          ctx.lineTo(p.x, p.y);
+        });
+        // cierra el trazado
+        ctx.closePath();
+        // dibuja el corazón
+        ctx.stroke();
+      }
+
+      dibujarCorazonEnCanvas();
+    </script>
+  </body>
+</html>
